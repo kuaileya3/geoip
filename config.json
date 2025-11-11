@@ -173,10 +173,6 @@
           "twitter": ["AS8945", "AS63179", "AS54888", "AS35995", "AS13414"]
         }
       }
-    },
-    {
-      "type": "private",
-      "action": "add"
     }
   ],
   "output": [
