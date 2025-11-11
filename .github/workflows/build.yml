@@ -61,6 +61,10 @@ jobs:
       - name: Build geoip files
         run: |
           go build ./
+          # 动态修改配置文件，移除私有地址
+          sed -i '/"type": "private",/,/}/d' ./config.json
+          sed -i 's/"wantedList": \["cn", "private"\]/"wantedList": \["cn"\]/g' ./config.json
+          sed -i 's/"geoip-only-cn-private.dat"/"geoip-only-cn.dat"/g' ./config.json
           ./geoip convert -c ./config.json
 
       - name: Verify mmdb files
